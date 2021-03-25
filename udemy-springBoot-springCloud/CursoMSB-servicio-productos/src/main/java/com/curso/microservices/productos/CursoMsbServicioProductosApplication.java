@@ -1,0 +1,13 @@
+package com.curso.microservices.productos;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CursoMsbServicioProductosApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CursoMsbServicioProductosApplication.class, args);
+	}
+
+}
