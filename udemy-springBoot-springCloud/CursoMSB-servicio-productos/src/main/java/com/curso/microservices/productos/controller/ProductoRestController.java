@@ -15,7 +15,7 @@ import com.curso.microservices.productos.entity.Producto;
 import com.curso.microservices.productos.service.ProductoService;
 
 @RestController
-@RequestMapping(value = "/products")
+@RequestMapping(value = "/")
 public class ProductoRestController {
 	
 
@@ -30,7 +30,7 @@ public class ProductoRestController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Producto> findById(@PathVariable(name = "id", required = true) Long id){
+	public ResponseEntity<Producto> findById(@PathVariable(name = "id", required = true) Long id) {
 		
 		Producto producto = productoService.findById(id);
 		
@@ -39,6 +39,12 @@ public class ProductoRestController {
 			return ResponseEntity.noContent().build();
 		}
 		log.info("producto encontrado.");
+		
+		/*try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}*/
 		
 		return ResponseEntity.ok(producto);
 		

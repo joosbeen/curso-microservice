@@ -13,10 +13,10 @@ import com.curso.microservices.items.entity.Producto;
 @FeignClient(name = "servicio-productos")
 public interface ProductoFeignClient {
 	
-	@GetMapping(value = "/products")
+	@GetMapping(value = "/")
 	public ResponseEntity<List<Producto>> findByAll();
 	
-	@GetMapping(value = "/products/{id}")
+	@GetMapping(value = "/{id}")
 	public ResponseEntity<Producto> findById(@PathVariable(name = "id", required = true) Long id);
 
 }
